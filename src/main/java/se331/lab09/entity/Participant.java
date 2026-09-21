@@ -14,21 +14,15 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Event {
+public class Participant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Exclude
     Long id;
-    String category;
-    String title;
-    String description;
-    String location;
-    String date;
-    String time;
-    Boolean petsAllowed;
-    Organizer organizer;
+    String name;
+    String telNo;
     @Builder.Default
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    List<Participant> participants = new ArrayList<>();
+    List<Event> eventHistories = new ArrayList<>();
 }
