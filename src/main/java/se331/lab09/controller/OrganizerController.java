@@ -1,4 +1,4 @@
-package se331.lab08.controller;
+package se331.lab09.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import se331.lab08.entity.Organizer;
-import se331.lab08.service.OrganizerService;
+import se331.lab09.entity.Organizer;
+import se331.lab09.service.OrganizerService;
 
 import java.util.List;
 

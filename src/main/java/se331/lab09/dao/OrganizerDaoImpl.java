@@ -1,7 +1,7 @@
-package se331.lab08.dao;
+package se331.lab09.dao;
 
 import org.springframework.stereotype.Repository;
-import se331.lab08.entity.Organizer;
+import se331.lab09.entity.Organizer;
 import org.springframework.context.annotation.Profile;
 
 import jakarta.annotation.PostConstruct;

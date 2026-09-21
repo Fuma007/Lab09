@@ -1,7 +1,7 @@
-package se331.lab08.repository;
+package se331.lab09.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import se331.lab08.entity.Event;
+import se331.lab09.entity.Event;
 
 import java.util.List;
 

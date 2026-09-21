@@ -1,12 +1,10 @@
-package se331.lab08.service;
+package se331.lab09.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import se331.lab08.dao.EventDao;
-import se331.lab08.entity.Event;
+import se331.lab09.dao.EventDao;
+import se331.lab09.entity.Event;
 import org.springframework.data.domain.Page;
-
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

@@ -1,7 +1,7 @@
-package se331.lab08.repository;
+package se331.lab09.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import se331.lab08.entity.Organizer;
+import se331.lab09.entity.Organizer;
 
 public interface OrganizerRepository extends JpaRepository<Organizer, Long> {
 }

@@ -1,4 +1,4 @@
-package se331.lab08.entity;
+package se331.lab09.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,18 +15,11 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Event {
-
+public class Organizer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Exclude
     Long id;
-    String category;
-    String title;
-    String description;
-    String location;
-    String date;
-    String time;
-    boolean petsAllowed;
-    String organizer;
+    String organizationName;
+    String address;
 }

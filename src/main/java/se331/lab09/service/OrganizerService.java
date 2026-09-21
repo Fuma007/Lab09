@@ -1,6 +1,6 @@
-package se331.lab08.service;
+package se331.lab09.service;
 
-import se331.lab08.entity.Organizer;
+import se331.lab09.entity.Organizer;
 
 import java.util.List;
 

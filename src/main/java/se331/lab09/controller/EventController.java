@@ -1,4 +1,4 @@
-package se331.lab08.controller;
+package se331.lab09.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
@@ -7,10 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.data.domain.Page;
-import se331.lab08.entity.Event;
-import se331.lab08.service.EventService;
-
-import java.util.List;
+import se331.lab09.entity.Event;
+import se331.lab09.service.EventService;
 
 @RestController
 @RequiredArgsConstructor

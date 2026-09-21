@@ -1,7 +1,7 @@
-package se331.lab08.service;
+package se331.lab09.service;
 
 import org.springframework.data.domain.Page;
-import se331.lab08.entity.Event;
+import se331.lab09.entity.Event;
 
 public interface EventService {
     Integer getEventSize();

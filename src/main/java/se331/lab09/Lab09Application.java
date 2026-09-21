@@ -1,4 +1,4 @@
-package se331.lab08;
+package se331.lab09;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,10 +7,10 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class Lab08Application {
+public class Lab09Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Lab08Application.class, args);
+        SpringApplication.run(Lab09Application.class, args);
     }
 
     @Bean

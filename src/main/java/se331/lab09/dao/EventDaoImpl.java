@@ -1,11 +1,11 @@
-package se331.lab08.dao;
+package se331.lab09.dao;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
-import se331.lab08.entity.Event;
+import se331.lab09.entity.Event;
 
 import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
