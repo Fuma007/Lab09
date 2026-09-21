@@ -6,8 +6,10 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 import se331.lab09.entity.Event;
 import se331.lab09.entity.Organizer;
+import se331.lab09.entity.Participant;
 import se331.lab09.repository.EventRepository;
 import se331.lab09.repository.OrganizerRepository;
+import se331.lab09.repository.ParticipantRepository;
 import jakarta.transaction.Transactional;
 
 @Component
@@ -15,6 +17,7 @@ import jakarta.transaction.Transactional;
 public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     final EventRepository eventRepository;
     final OrganizerRepository organizerRepository;
+    final ParticipantRepository participantRepository;
 
     @Override
     @Transactional
@@ -27,8 +30,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         org3 = organizerRepository.save(Organizer.builder()
                 .name("ChiangMai").build());
 
-        Event tempEvent;
-        tempEvent = eventRepository.save(Event.builder()
+        Event event1, event2, event3, event4;
+
+        event1 = eventRepository.save(Event.builder()
                 .category("Academic")
                 .title("Midterm Exam")
                 .description("A time for taking the exam")
@@ -37,10 +41,10 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .time("3.00-4.00 pm.")
                 .petsAllowed(false)
                 .build());
-        tempEvent.setOrganizer(org1);
-        org1.getOwnEvents().add(tempEvent);
+        event1.setOrganizer(org1);
+        org1.getOwnEvents().add(event1);
 
-        tempEvent = eventRepository.save(Event.builder()
+        event2 = eventRepository.save(Event.builder()
                 .category("Academic")
                 .title("Commencement Day")
                 .description("A time for celebration")
@@ -49,10 +53,10 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .time("8.00am-4.00 pm.")
                 .petsAllowed(false)
                 .build());
-        tempEvent.setOrganizer(org1);
-        org1.getOwnEvents().add(tempEvent);
+        event2.setOrganizer(org1);
+        org1.getOwnEvents().add(event2);
 
-        tempEvent = eventRepository.save(Event.builder()
+        event3 = eventRepository.save(Event.builder()
                 .category("Cultural")
                 .title("Loy Krathong")
                 .description("A time for Krathong")
@@ -61,10 +65,10 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .time("8.00-10.00 pm.")
                 .petsAllowed(false)
                 .build());
-        tempEvent.setOrganizer(org2);
-        org2.getOwnEvents().add(tempEvent);
+        event3.setOrganizer(org2);
+        org2.getOwnEvents().add(event3);
 
-        tempEvent = eventRepository.save(Event.builder()
+        event4 = eventRepository.save(Event.builder()
                 .category("Cultural")
                 .title("Songkran")
                 .description("Let's Play Water")
@@ -73,7 +77,50 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .time("10.00am - 6.00 pm.")
                 .petsAllowed(true)
                 .build());
-        tempEvent.setOrganizer(org3);
-        org3.getOwnEvents().add(tempEvent);
+        event4.setOrganizer(org3);
+        org3.getOwnEvents().add(event4);
+
+        Participant p1 = Participant.builder()
+                .name("John Smith")
+                .telNo("081-111-1111")
+                .build();
+        p1.getEventHistories().add(event1);
+        p1.getEventHistories().add(event2);
+        p1.getEventHistories().add(event3);
+        participantRepository.save(p1);
+
+        Participant p2 = Participant.builder()
+                .name("Son Goku")
+                .telNo("081-222-2222")
+                .build();
+        p2.getEventHistories().add(event2);
+        p2.getEventHistories().add(event3);
+        p2.getEventHistories().add(event4);
+        participantRepository.save(p2);
+
+        Participant p3 = Participant.builder()
+                .name("Joseph Joestar")
+                .telNo("081-333-3333")
+                .build();
+        p3.getEventHistories().add(event3);
+        p3.getEventHistories().add(event4);
+        p3.getEventHistories().add(event1);
+        participantRepository.save(p3);
+
+        Participant p4 = Participant.builder()
+                .name("Kujo Jotaro")
+                .telNo("081-444-4444")
+                .build();
+        p4.getEventHistories().add(event1);
+        p4.getEventHistories().add(event2);
+        participantRepository.save(p4);
+
+        Participant p5 = Participant.builder()
+                .name("Johnny Joestar")
+                .telNo("081-555-5555")
+                .build();
+        p5.getEventHistories().add(event4);
+        p5.getEventHistories().add(event2);
+        participantRepository.save(p5);
     }
 }
