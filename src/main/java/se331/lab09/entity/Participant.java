@@ -1,9 +1,6 @@
 package se331.lab09.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
@@ -21,6 +18,7 @@ public class Participant {
     Long id;
     String name;
     String telNo;
+    @ManyToMany
     @Builder.Default
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
