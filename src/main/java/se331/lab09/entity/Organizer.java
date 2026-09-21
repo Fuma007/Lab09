@@ -1,9 +1,6 @@
 package se331.lab09.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
@@ -20,6 +17,7 @@ public class Organizer {
     @EqualsAndHashCode.Exclude
     Long id;
     String name;
+    @OneToMany(mappedBy = "organizer")
     @Builder.Default
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
